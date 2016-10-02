@@ -89,3 +89,12 @@ study effective java
  - コピーコンストラクタかコピーファクトリーを提供するのがうまい方法
     - `public Yum(Yum yum)`
     - `public static Yum newInstance(Yum yum)`
+
+## 項目12 Comparable の実装を検討する
+
+ - 自然な順序がある場合実装を検討する
+ - compareTo メソッドの一般契約
+    - sgn(x.compareTo(y)) == -sgn(y.compareTo(x)) を保証する
+    - (x.compareTo(y) > 0 && y.compareTo(z) > 0) は x.compareTo(z) > 0 を保証する
+    − x.compareTo(y) == 0 が sgn(x.compareTo(z)) == sgn(y.compareTo(z)) を保証する
+ - compareTo は符号だけで指定されるが、int のオーバーフローに注意が必要
