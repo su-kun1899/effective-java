@@ -78,7 +78,14 @@ study effective java
 
 ## 項目10 toString を常にオーバライドする
 
- − toString あると使いやすくなる
- − 興味がある情報を <u>すべて</u> 返すべき
+ - toString あると使いやすくなる
+ - 興味がある情報を <u>すべて</u> 返すべき
  - すべての情報へのアクセス手段（アクセサ）を提供する
 
+## 項目11 clone を注意して実装する
+
+ - Cloneable インターフェースは使い勝手が悪い
+ - 代替手段を用意するか、複製を提供しないほうが賢明
+ - コピーコンストラクタかコピーファクトリーを提供するのがうまい方法
+    - `public Yum(Yum yum)`
+    - `public static Yum newInstance(Yum yum)`
