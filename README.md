@@ -1,7 +1,7 @@
 # effective-java
 study effective java
 
-# オブジェクトの生成と消滅
+# 第2章 オブジェクトの生成と消滅
 
 ## 項目1 コンストラクタの代わりにstaticファクトリーメソッドを検討する
 
@@ -98,3 +98,10 @@ study effective java
     - (x.compareTo(y) > 0 && y.compareTo(z) > 0) は x.compareTo(z) > 0 を保証する
     − x.compareTo(y) == 0 が sgn(x.compareTo(z)) == sgn(y.compareTo(z)) を保証する
  - compareTo は符号だけで指定されるが、int のオーバーフローに注意が必要
+
+# 第4章 クラスとインターフェース
+
+## 項目13 クラスとメンバーへのアクセス可能性を最小限にする
+
+ - アクセススコープは可能な限り小さくする
+ - publicのクラスはpublicのフィールドを持つべきではない
