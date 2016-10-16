@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import item2.NutritionFacts;
+import item26.Stack;
 
 public class Main {
 
@@ -24,5 +25,16 @@ public class Main {
         return s1.length() - s2.length();
       }
     });
+  }
+
+  // ジェネリックStack を使用する小さなプログラム
+  private void doItem26(String[] args) {
+    Stack<String> stack = new Stack<String>();
+    for (String arg : args) {
+      stack.push(arg);
+    }
+    while (!stack.isEmpty()) {
+      System.out.println(stack.pop().toUpperCase());
+    }
   }
 }
