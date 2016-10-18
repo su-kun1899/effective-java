@@ -214,3 +214,10 @@ study effective java
 ## 項目27 ジェネリックメソッドを使用する
 
  - ジェネリック型と同様に、安全で使いやすい
+
+## 項目28 API の柔軟性向上のためにワイルドカードを使用する
+
+ - ワイルドカードはAPI を柔軟にする
+ - 基本原則はPECS
+    - Producer -extends, Consumer -super
+    - すべての比較可能なものとコンパレータは、Consumer である
