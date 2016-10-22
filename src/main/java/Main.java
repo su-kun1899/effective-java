@@ -3,6 +3,7 @@ import java.util.Comparator;
 
 import item2.NutritionFacts;
 import item26.Stack;
+import item29.Favoirtes;
 
 public class Main {
 
@@ -36,5 +37,17 @@ public class Main {
     while (!stack.isEmpty()) {
       System.out.println(stack.pop().toUpperCase());
     }
+  }
+
+  private void doItem29(String[] args) {
+    Favoirtes favoirtes = new Favoirtes();
+    favoirtes.putFavorite(String.class, "Java");
+    favoirtes.putFavorite(Integer.class, 11);
+    favoirtes.putFavorite(Class.class, Favoirtes.class);
+    String favoriteString = favoirtes.getFavorite(String.class);
+    int favoriteInteger = favoirtes.getFavorite(Integer.class);
+    Class favoriteClass = favoirtes.getFavorite(Class.class);
+
+    System.out.printf("%s %x %s%n", favoriteString, favoriteInteger, favoriteClass.getName());
   }
 }

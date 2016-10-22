@@ -221,3 +221,10 @@ study effective java
  - 基本原則はPECS
     - Producer -extends, Consumer -super
     - すべての比較可能なものとコンパレータは、Consumer である
+
+## 項目29 型安全な異種コンテナーを検討する
+
+ - コンテナーではなく、キーに対して型パラメータを指定する手法がある
+ - キーにはクラスオブジェクトを使用できる
+ - 境界型トークンを使えば制限を設けられる
+    - `public <T extends Annotation> T getAnnotation(Class<T> annotationType);`
