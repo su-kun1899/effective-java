@@ -228,3 +228,11 @@ study effective java
  - キーにはクラスオブジェクトを使用できる
  - 境界型トークンを使えば制限を設けられる
     - `public <T extends Annotation> T getAnnotation(Class<T> annotationType);`
+
+## 項目30 int 定数の代わりにenum を使用する
+
+ - 固定数の定数が必要な場合、常にenum を使用すべき
+ - int 定数よりもはるかに読みやすく、安全であり、強力
+ - データを関連付けたり、データによって振る舞いが変わるメソッドを提供できる
+ - switch を行うenum よりは、定数固有メソッドを選ぶ
+ - 複数の enum 定数が共通の振る舞いを共有するのであれば、戦略enum パターンを検討する
