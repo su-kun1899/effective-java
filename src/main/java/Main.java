@@ -1,9 +1,13 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.EnumSet;
 
 import item2.NutritionFacts;
 import item26.Stack;
 import item29.Favoirtes;
+import item32.Text;
+
+import static item32.Text.*;
 
 public class Main {
 
@@ -49,5 +53,10 @@ public class Main {
     Class favoriteClass = favoirtes.getFavorite(Class.class);
 
     System.out.printf("%s %x %s%n", favoriteString, favoriteInteger, favoriteClass.getName());
+  }
+
+  private void doItem32() {
+    Text text = new Text();
+    text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
   }
 }
