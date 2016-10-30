@@ -1,11 +1,16 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.EnumMap;
 import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import item2.NutritionFacts;
 import item26.Stack;
 import item29.Favoirtes;
 import item32.Text;
+import item33.Herb;
 
 import static item32.Text.*;
 
@@ -58,5 +63,22 @@ public class Main {
   private void doItem32() {
     Text text = new Text();
     text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
+  }
+
+  private void doItem33() {
+    Herb[] garden = {
+        new Herb("hoge", Herb.Type.ANNUAL),
+        new Herb("huga", Herb.Type.BIENNIAL),
+        new Herb("piyo", Herb.Type.PERENNIAL)
+    };
+
+    // データをenum と関連付けるために EnumMap を使用する
+    Map<Herb.Type, Set<Herb>> herbsByType = new EnumMap<>(Herb.Type.class);
+    for (Herb.Type type : Herb.Type.values()) {
+      herbsByType.put(type, new HashSet<>());
+    }
+    for (Herb herb : garden) {
+      herbsByType.get(herb.getType()).add(herb);
+    }
   }
 }
