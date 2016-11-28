@@ -357,3 +357,11 @@ study effective java
  - `java.lang` , `java.util` の内容と、ある程度 `java.io` の内容を知っておくべき
  - ライブラリーのコードは平均的開発者が専念できるよりもはるかに多くの配慮がなされる
     - 共通だと思えることをする場合、ライブラリーに既にないか調べる
+
+## 項目48 正確な答えが必要ならば、floatとdoubleを避ける
+
+ - 正確な答えを必要とする計算にfloatやdoubleを使用しない
+ - BigDecimalかintかlongを使う
+ - 9桁を超えないならint、18桁を超えないならlong、それ以上ならBigDecimal
+ - 丸めが必要ならBigDecimal
+    - ただしコストと不便さがある
