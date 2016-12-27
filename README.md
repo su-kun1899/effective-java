@@ -413,3 +413,33 @@ study effective java
  - 最適化の規則（M. A. Jackson）
     - 最適化するな
     - (専門家のみに対して)まだ最適化するな
+
+## 項目56 一般的に受け入れられている命名規約を守る
+
+ - パッケージ名
+    - 組織のインターネットドメインで始まる
+    - 階層は8文字以下であるべき
+    - 意味を持った省略形は推奨される
+    - `com.google.inject` , `org.joda.time.format`
+ - 型パラメータ
+    - 任意の型: `T`
+       - 一連の任意の型: `T` `U` `V` / `T1` `T2` `T3`
+    - コレクションの要素型: `E`
+    - マップのキーと値: `K` `V`
+    - 例外: `X`
+ - インターフェース
+    - `able` や `ible` で終わる形容詞でも命名される
+    - `Runnable` `Iteratable` `Accessible`
+ - booleanを返すメソッド名
+    - `is` 、まれに `has` で始まる
+ - 機能や属性を返すメソッド
+    - 名詞か名詞句、あるいはgetで始まる動詞句
+    - Java Beansならばgetをつける
+    - setterが存在するならgetをつける
+    - 名詞の方が読みやすい場合もある `car.speed()`
+ - 型変換のメソッド
+    - toType: `toString` `toArray`
+    - asType: `asList`
+    - typeValue: `intValue`
+    - staticファクトリーメソッド: `valueOf` `of` `getInstance` `newInstance`
+       - getType, newType (項目1)
