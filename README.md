@@ -443,3 +443,15 @@ study effective java
     - typeValue: `intValue`
     - staticファクトリーメソッド: `valueOf` `of` `getInstance` `newInstance`
        - getType, newType (項目1)
+
+# 第9章 例外
+
+## 項目57 例外的状態にだけ例外を使用する
+
+ - 例外的条件に対してのみ例外を使用する
+ - 例外の使用を強制するようなAPIを書かない
+ - 状態検査メソッドか、意味のある戻り値で判別させる
+    - 状態検査の方が不適切な使用を見つけやすい `Iterator#hasNext`
+    - 非同期で状態遷移する可能性がある場合意味のある戻り値が必要になるかもしれない
+       - パフォーマンスの問題など
+
