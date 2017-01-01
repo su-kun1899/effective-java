@@ -471,3 +471,18 @@ study effective java
     - APIの適切な使用では例外状態を防ぐことができない
     - API使用者が例外捕捉時に何らかの有用な処理ができる
  - 状態検査メソッドによるリファクタリングが適切かもしれない(項目57)
+
+## 項目60 標準例外を使用する
+
+ - 既存の例外を再利用する利点
+    - APIを学んで使用するのが容易
+    - 見慣れているので、プログラムが読みやすくなる
+    - 例外クラスが少ないことで使用メモリ量とクラスのロード時間の削減
+ - IllegalArgumentException: パラメータ値が不適切
+ - IllegalStateException: メソッド呼び出しに対してオブジェクト状態が不正
+ - NullPointerException: パラメータ値が禁止されているnull
+ - IndexOutOfBoundsException: インデックスパラメータ値が範囲外
+ - ConcurrentModificationException: 禁止されているオブジェクトの並行した変更を検出
+ - UnsupportedOperationException: オブジェクトがメソッドをサポートしていない
+
+ 
