@@ -126,3 +126,12 @@ study effective java
 - コレクションとストリームは基本的な道具
 - 標準ライブラリが要求に答えられない場合、高品質のサードパーティーのライブラリを調べる
   - GoogleのGuava
+
+### 項目60 正確な答えが必要ならば、floatとdoubleを避ける
+
+- 正確な答えを必要とする計算にfloatやdoubleを使用しない
+- とりわけ金銭計算には適していない
+- BigDecimalかintかlongを使う
+- 9桁を超えないならint、18桁を超えないならlong、それ以上ならBigDecimal
+- 丸めが必要ならBigDecimal
+  - ただしコストと不便さがある
