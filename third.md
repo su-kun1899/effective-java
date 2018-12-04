@@ -122,6 +122,58 @@ study effective java
   - ループが無難
   - 両方試してみてうまくいく方を選ぼう
 
+### 項目46 ストリームで副作用のない関数を選ぶ
+
+- ストリームの中間操作も終端操作も入力だけに依存させる
+  - 純粋関数
+  - 状態に依存させない
+  - 副作用がない
+- forEachはストリームの計算結果を報告するためだけに使う
+　- 既存のコレクションに結果を追加するという目的には意味がある
+- コレクターはストリームを使うために学ぶべき概念
+- ストリームを本物のコレクションに集めるためのコレクター
+  - toList, toSet, toCollection
+- Mapへ集めるためのコレクター
+  - toMap(keyMapper, valueMapper)
+  - toMap(keyMapper, valueMapper, mergeFunction)
+    - 同一Keyの場合のValueをmergeFunctionで生成する
+  - toMap(keyMapper, valueMapper, mergeFunction, mapSupplier)
+    - TreeMapやEnumMapといった特定の型を指定する
+- グループ化してMapを生成するコレクタ
+  - groupingBy(classifier)
+    - 分類関数で要素が所属するカテゴリを返す
+    - カテゴリがマップのKeyになる
+    - ValueはList
+  - groupingBy(classifier, downstream)
+    - Valueをリスト以外にコレクトする
+    - toSetを渡すのがもっとも単純
+    - toCollectionを渡すと好きなコレクション型にできる
+    - counting()を渡すとカテゴリ内の要素数をValueにできる
+  - マップファクトリも指定可能
+    - 🤔 マップ側の操作も合わせてできる？
+  - groupingByConcurrent
+    - 並列に動作する
+  - partitioningBy
+    - 分類関数の変わりに述語を受け取る
+    - KeyがBooleanになる
+- ダウンストリームコレクタ
+  - counting
+  - summing
+  - averaging
+  - summarizing
+- コレクションに関係ないコレクタ
+  - minBy
+  - maxBy
+  - joining
+    - CharSequenceのストリームでのみ利用
+- Collectorsのメンバーは可読性のためstaticインポートするのが慣習
+- ストリームパイプラインのプログラミングの本質は副作用のない関数オブジェクト
+- 最も重要なコレクターファクトリー
+  - toSet
+  - toMap
+  - groupingBy
+  - joining
+
 ## 第9章 プログラミング一般
 
 ### 項目57 ローカル変数のスコープを最小限にする
