@@ -1,6 +1,17 @@
 # effective-java
 study effective java
 
+## 第2章 オブジェクトの生成と消滅
+
+### 項目9 try-finally よりも try-with-resources を選ぶ
+
+- try-with-resources は短く明瞭
+  - 生成される例外は有用
+- try-with-resources を使う資源は AutoCloseable を実装する
+- try-with-resources はclose の例外を隠蔽
+  - スタックトレースには表示される
+- catch 節も書ける
+
 ## 第7章 ラムダとストリーム
 
 ### 項目42 無名クラスよりもラムダを選ぶ
